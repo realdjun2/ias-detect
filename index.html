@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <!-- LOGIN FORM -->
+    <div class="container" id="loginContainer">
+        <h2>Welcome!</h2>
+        <input type="text" id="username" placeholder="Enter Username">
+        <input type="password" id="password" placeholder="Enter Password">
+        
+        <!-- CAPTCHA (Hidden Initially) -->
+        <div id="captchaContainer" class="hidden">
+            <p id="captchaText"></p>
+            <input type="number" id="captchaAnswer" placeholder="Solve the CAPTCHA">
+        </div>
+
+        <p id="lockMessage" class="hidden"></p>
+        <button onclick="login()" id="loginButton">Login</button>
+    </div>
+
+    <!-- ENCRYPTION SYSTEM (Hidden until login) -->
+    <div class="container hidden" id="cipherContainer">
+        <h2>Caesar Cipher</h2>
+        <textarea id="inputText" placeholder="Enter your text..."></textarea>
+        <input type="number" id="shiftKey" placeholder="Enter shift key (1-25)" min="1" max="25">
+        <div>
+            <button onclick="encrypt()">Encrypt</button>
+            <button onclick="decrypt()">Decrypt</button>
+        </div>
+        <h3>Output:</h3>
+        <textarea id="outputText" readonly></textarea>
+        <button onclick="copyToClipboard()">Copy</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+</body>
+</html>
